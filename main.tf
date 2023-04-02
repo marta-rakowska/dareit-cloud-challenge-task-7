@@ -22,3 +22,21 @@ resource "google_compute_instance" "dareit-vm-ci" {
     }
   }
 }
+
+resource "google_storage_bucket_iam_member" "member" {
+  provider = google
+  bucket   = "dare-bucket-tf-ci"
+  role     = "roles/storage.objectViewer"
+  member   = "allUsers"
+}
+
+resource "google_storage_bucket" "static-site" {
+  name          = "dare-bucket-tf-ci"
+  location      = "US"
+  force_destroy = true
+
+  website {
+    main_page_suffix = "index.html"
+    not_found_page   = "404.html"
+  }
+}
