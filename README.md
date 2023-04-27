@@ -13,3 +13,8 @@ The task consisted of the following steps:
 8. Create a branch called feat/add-bucket.
 9. On the branch, modify the code of the main.tf to add a new bucket.
 10. Open a pull request.
+
+## Pre-requisites:
+ 
+:heavy_check_mark: GCP account</br>
+:heavy_check_mark: GitHub account
